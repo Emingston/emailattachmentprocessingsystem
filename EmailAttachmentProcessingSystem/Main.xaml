@@ -1,0 +1,589 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="995,8703" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:uga="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities" xmlns:ugae="clr-namespace:UiPath.GSuite.Activities.Enums;assembly=UiPath.GSuite.Activities" xmlns:ugage="clr-namespace:UiPath.GSuite.Activities.Gmail.Enums;assembly=UiPath.GSuite.Activities" xmlns:ugagm="clr-namespace:UiPath.GSuite.Activities.Gmail.Models;assembly=UiPath.GSuite.Activities" xmlns:ugm="clr-namespace:UiPath.GSuite.Models;assembly=UiPath.GSuite" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.GSuite.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Models</x:String>
+      <x:String>UiPath.GSuite.Models</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Shared.Api.Google.Gmail.Models</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Enums</x:String>
+      <x:String>UiPath.GSuite.Activities.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Filters</x:String>
+      <x:String>UiPath.GSuite.Activities.Filters</x:String>
+      <x:String>UiPath.GSuite.Gmail.Enums</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.GSuite.Activities.Drive.Enums</x:String>
+      <x:String>UiPath.GSuite.Gmail.Models</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.GSuite.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.AsyncEnumerable</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Email Attachment Processing" sap:VirtualizedContainerService.HintSize="612,8678" sap2010:WorkflowViewState.IdRef="Sequence_Main">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="inputAttachments" />
+      <Variable x:TypeArguments="x:String" Name="processedFolder" />
+      <Variable x:TypeArguments="x:String" Name="errorFolder" />
+      <Variable x:TypeArguments="x:String" Name="outputFolder" />
+      <Variable x:TypeArguments="x:String" Name="reportPath" />
+      <Variable x:TypeArguments="x:String" Name="logPath" />
+      <Variable x:TypeArguments="sd:DataTable" Name="currentData" />
+      <Variable x:TypeArguments="x:String" Name="stagingKey" />
+      <Variable x:TypeArguments="x:String" Name="stagingFolder" />
+      <Variable x:TypeArguments="x:Int32" Name="downloadedCount" />
+      <Variable x:TypeArguments="x:Int32" Name="successfulCount" />
+      <Variable x:TypeArguments="x:Boolean" Name="reportExists" />
+      <Variable x:TypeArguments="x:Boolean" Name="logExists" />
+      <Variable x:TypeArguments="x:Boolean" Name="processedExists" />
+      <Variable x:TypeArguments="x:String" Name="failureText" />
+      <Variable x:TypeArguments="x:Int32" Name="emailCount" />
+      <Variable x:TypeArguments="x:String" Name="subjectFilter" />
+      <Variable x:TypeArguments="x:String" Name="logExcelPath" />
+      <Variable x:TypeArguments="x:Boolean" Name="logExcelExists" />
+      <Variable x:TypeArguments="sd:DataTable" Name="logData" />
+      <Variable x:TypeArguments="x:Int32" Name="logRow" />
+      <Variable x:TypeArguments="x:String" Name="logSender" />
+      <Variable x:TypeArguments="x:String" Name="logSubject" />
+      <Variable x:TypeArguments="x:String" Name="logAttachmentName" />
+      <Variable x:TypeArguments="x:String" Name="logStatus" />
+      <Variable x:TypeArguments="x:String" Name="logErrorDetails" />
+      <Variable x:TypeArguments="x:String" Name="logProcessedDate" />
+      <Variable x:TypeArguments="x:String" Name="logGmailMessageId" />
+      <Variable x:TypeArguments="x:Int32" Name="totalDownloadedCount" />
+      <Variable x:TypeArguments="x:Int32" Name="totalSuccessfulCount" />
+      <Variable x:TypeArguments="x:Int32" Name="totalFailedCount" />
+      <Variable x:TypeArguments="x:Int32" Name="totalDuplicateCount" />
+      <Variable x:TypeArguments="x:Int32" Name="totalDataRows" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign DisplayName="Set Input Attachments Folder" sap:VirtualizedContainerService.HintSize="598,175" sap2010:WorkflowViewState.IdRef="Assign_16">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[inputAttachments]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(Environment.CurrentDirectory, "Input", "Attachments")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Set Processed Folder" sap:VirtualizedContainerService.HintSize="598,175" sap2010:WorkflowViewState.IdRef="Assign_17">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[processedFolder]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(Environment.CurrentDirectory, "Processed")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Set Error Folder" sap:VirtualizedContainerService.HintSize="598,175" sap2010:WorkflowViewState.IdRef="Assign_18">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[errorFolder]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(Environment.CurrentDirectory, "Error")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Set Output Folder" sap:VirtualizedContainerService.HintSize="598,175" sap2010:WorkflowViewState.IdRef="Assign_19">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[outputFolder]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(Environment.CurrentDirectory, "Output")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Set Report Path" sap:VirtualizedContainerService.HintSize="598,175" sap2010:WorkflowViewState.IdRef="Assign_20">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[reportPath]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(outputFolder, "Processed_Report.xlsx")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Set Log Path" sap:VirtualizedContainerService.HintSize="598,175" sap2010:WorkflowViewState.IdRef="Assign_21">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[logPath]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(outputFolder, "Processing_Log.csv")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Set Excel Log Path">
+      <Assign.To><OutArgument x:TypeArguments="x:String">[logExcelPath]</OutArgument></Assign.To>
+      <Assign.Value><InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(outputFolder, "Processing_Log.xlsx")]</InArgument></Assign.Value>
+    </Assign>
+    <Assign DisplayName="Initialize Blank Subject Filter">
+      <Assign.To><OutArgument x:TypeArguments="x:String">[subjectFilter]</OutArgument></Assign.To>
+      <Assign.Value><InArgument x:TypeArguments="x:String">[&quot;&quot;]</InArgument></Assign.Value>
+    </Assign>
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Input Attachments Folder" sap:VirtualizedContainerService.HintSize="598,123" sap2010:WorkflowViewState.IdRef="CreateDirectory_6" Path="[inputAttachments]" />
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Processed Folder" sap:VirtualizedContainerService.HintSize="598,123" sap2010:WorkflowViewState.IdRef="CreateDirectory_7" Path="[processedFolder]" />
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Error Folder" sap:VirtualizedContainerService.HintSize="598,123" sap2010:WorkflowViewState.IdRef="CreateDirectory_8" Path="[errorFolder]" />
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Output Folder" sap:VirtualizedContainerService.HintSize="598,123" sap2010:WorkflowViewState.IdRef="CreateDirectory_9" Path="[outputFolder]" />
+    <ui:FileExistsX DisplayName="Check Report" Exists="[reportExists]" sap:VirtualizedContainerService.HintSize="598,175" sap2010:WorkflowViewState.IdRef="FileExistsX_4" Path="[reportPath]" />
+    <If Condition="[Not reportExists]" DisplayName="Create Report When Missing" sap:VirtualizedContainerService.HintSize="598,328" sap2010:WorkflowViewState.IdRef="If_6">
+      <If.Then>
+        <Sequence DisplayName="Then" sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <ui:CreateNewWorkbook WorkbookFile="{x:Null}" ConflictResolution="Replace" DisplayName="Create Processed Report" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="CreateNewWorkbook_2" SheetName="ProcessedData" WorkbookPath="[reportPath]" />
+        </Sequence>
+      </If.Then>
+    </If>
+    <ui:FileExistsX DisplayName="Check Processing Log" Exists="[logExists]" sap:VirtualizedContainerService.HintSize="598,175" sap2010:WorkflowViewState.IdRef="FileExistsX_5" Path="[logPath]" />
+    <If Condition="[Not logExists]" DisplayName="Create Log Header When Needed" sap:VirtualizedContainerService.HintSize="598,320" sap2010:WorkflowViewState.IdRef="If_7">
+      <If.Then>
+        <Sequence DisplayName="Then" sap2010:WorkflowViewState.IdRef="Sequence_18">
+          <ui:AppendLine File="{x:Null}" DisplayName="Write Log Header" Encoding="utf-8" FileName="[logPath]" sap:VirtualizedContainerService.HintSize="334,135" sap2010:WorkflowViewState.IdRef="AppendLine_7" Text="&quot;Subject&quot;,&quot;Filename&quot;,&quot;Status&quot;,&quot;Error&quot;" UseDefaultEncoding="False" />
+        </Sequence>
+      </If.Then>
+    </If>
+    <ui:FileExistsX DisplayName="Check Excel Processing Log" Exists="[logExcelExists]" sap2010:WorkflowViewState.IdRef="FileExistsX_7" Path="[logExcelPath]" />
+    <If Condition="[Not logExcelExists]" DisplayName="Create Excel Processing Log When Missing" sap2010:WorkflowViewState.IdRef="If_11">
+      <If.Then>
+        <Sequence DisplayName="Then" sap2010:WorkflowViewState.IdRef="Sequence_19">
+          <ui:CreateNewWorkbook WorkbookFile="{x:Null}" DisplayName="Create Processing Log Workbook" WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" />
+          <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="A1" Text="Sender" DisplayName="Write Log Header Sender" />
+          <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="B1" Text="Subject" DisplayName="Write Log Header Subject" />
+          <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="C1" Text="AttachmentName" DisplayName="Write Log Header Attachment" />
+          <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="D1" Text="ProcessingStatus" DisplayName="Write Log Header Status" />
+          <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="E1" Text="ErrorDetails" DisplayName="Write Log Header Error" />
+          <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="F1" Text="ProcessedDate" DisplayName="Write Log Header Date" />
+          <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="G1" Text="GmailMessageId" DisplayName="Write Log Header Message Id" />
+          <Assign DisplayName="Set First Excel Log Row"><Assign.To><OutArgument x:TypeArguments="x:Int32">[logRow]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:Int32">[2]</InArgument></Assign.Value></Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap2010:WorkflowViewState.IdRef="Sequence_20">
+          <ui:ReadRange AddHeaders="True" DataTable="[logData]" DisplayName="Read Existing Excel Log" Range="A1:G10000" SheetName="ProcessingLog" WorkbookPath="[logExcelPath]" />
+          <Assign DisplayName="Set Next Excel Log Row"><Assign.To><OutArgument x:TypeArguments="x:Int32">[logRow]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:Int32">[If(logData Is Nothing OrElse logData.Rows.Count &lt; 1, 2, logData.Rows.Count + 2)]</InArgument></Assign.Value></Assign>
+        </Sequence>
+      </If.Else>
+    </If>
+    <Assign DisplayName="Initialize Total Downloaded Count" sap2010:WorkflowViewState.IdRef="Assign_31">
+      <Assign.To><OutArgument x:TypeArguments="x:Int32">[totalDownloadedCount]</OutArgument></Assign.To>
+      <Assign.Value><InArgument x:TypeArguments="x:Int32">[0]</InArgument></Assign.Value>
+    </Assign>
+    <Assign DisplayName="Initialize Total Successful Count" sap2010:WorkflowViewState.IdRef="Assign_32">
+      <Assign.To><OutArgument x:TypeArguments="x:Int32">[totalSuccessfulCount]</OutArgument></Assign.To>
+      <Assign.Value><InArgument x:TypeArguments="x:Int32">[0]</InArgument></Assign.Value>
+    </Assign>
+    <Assign DisplayName="Initialize Total Failed Count" sap2010:WorkflowViewState.IdRef="Assign_33">
+      <Assign.To><OutArgument x:TypeArguments="x:Int32">[totalFailedCount]</OutArgument></Assign.To>
+      <Assign.Value><InArgument x:TypeArguments="x:Int32">[0]</InArgument></Assign.Value>
+    </Assign>
+    <Assign DisplayName="Initialize Total Duplicate Count" sap2010:WorkflowViewState.IdRef="Assign_34">
+      <Assign.To><OutArgument x:TypeArguments="x:Int32">[totalDuplicateCount]</OutArgument></Assign.To>
+      <Assign.Value><InArgument x:TypeArguments="x:Int32">[0]</InArgument></Assign.Value>
+    </Assign>
+    <Assign DisplayName="Initialize Total Data Rows" sap2010:WorkflowViewState.IdRef="Assign_35">
+      <Assign.To><OutArgument x:TypeArguments="x:Int32">[totalDataRows]</OutArgument></Assign.To>
+      <Assign.Value><InArgument x:TypeArguments="x:Int32">[0]</InArgument></Assign.Value>
+    </Assign>
+    <ui:LogMessage Level="Info" Message="EmailAttachmentProcessingSystem batch started: up to 100 unread Inbox emails with Excel attachments. Subject filter is configurable and blank by default." DisplayName="Log Batch Start" sap2010:WorkflowViewState.IdRef="LogMessage_Start" />
+    <uga:ForEachEmailConnections ConnectionAccountName="{x:Null}" CurrentIndex="{x:Null}" Filter="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID0}" Length="[emailCount]" ManualEntryFolder="{x:Null}" QueryFilter="{x:Null}" AllLabels="W3siSWQiOiJDSEFUIiwiTmFtZSI6IkNIQVQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlNFTlQiLCJOYW1lIjoiU0VOVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiSU5CT1giLCJOYW1lIjoiSU5CT1giLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IklNUE9SVEFOVCIsIk5hbWUiOiJJTVBPUlRBTlQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlRSQVNIIiwiTmFtZSI6IlRSQVNIIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJEUkFGVCIsIk5hbWUiOiJEUkFGVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiU1BBTSIsIk5hbWUiOiJTUEFNIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9GT1JVTVMiLCJOYW1lIjoiQ0FURUdPUllfRk9SVU1TIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9VUERBVEVTIiwiTmFtZSI6IkNBVEVHT1JZX1VQREFURVMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiTmFtZSI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9QUk9NT1RJT05TIiwiTmFtZSI6IkNBVEVHT1JZX1BST01PVElPTlMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1NPQ0lBTCIsIk5hbWUiOiJDQVRFR09SWV9TT0NJQUwiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlNUQVJSRUQiLCJOYW1lIjoiU1RBUlJFRCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiVU5SRUFEIiwiTmFtZSI6IlVOUkVBRCIsIlR5cGUiOiJzeXN0ZW0ifV0=" AuthScopesInvalid="False" BrowserFolder="Inbox" BrowserFolderLabelId="INBOX" ConnectionId="31901571-4873-402e-adde-b12003b60eb1" CurrentItemVariableName="CurrentEmail" DisplayName="For Each Email" FilterSelectionMode="ConditionBuilder" FolderInputSelectionMode="Browse" sap:VirtualizedContainerService.HintSize="598,6101" sap2010:WorkflowViewState.IdRef="ForEachEmailConnections_2" ImportantOnly="False" IncludeAttachmentsMode="[UiPath.GSuite.Activities.Gmail.Enums.IncludeAttachmentsMode.All]" IncludeSubfolders="False" MarkAsRead="False" MaxResults="100" StarredOnly="False" UnreadOnly="True" UseConnectionService="True" WithAttachmentsOnly="True">
+      <uga:ForEachEmailConnections.Body>
+        <ActivityAction x:TypeArguments="ugm:GmailMessage, x:Int32">
+          <ActivityAction.Argument1>
+            <DelegateInArgument x:TypeArguments="ugm:GmailMessage" Name="CurrentEmail" />
+          </ActivityAction.Argument1>
+          <ActivityAction.Argument2>
+            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentEmailIndex" />
+          </ActivityAction.Argument2>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="596,5865" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Reset Download Count" sap:VirtualizedContainerService.HintSize="562,175" sap2010:WorkflowViewState.IdRef="Assign_22">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[downloadedCount]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Reset Success Count" sap:VirtualizedContainerService.HintSize="562,175" sap2010:WorkflowViewState.IdRef="Assign_23">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[successfulCount]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Set Log Sender"><Assign.To><OutArgument x:TypeArguments="x:String">[logSender]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:String">[If(String.IsNullOrWhiteSpace(CurrentEmail.FromAddress), &quot;[Sender unavailable]&quot;, CurrentEmail.FromAddress)]</InArgument></Assign.Value></Assign>
+            <Assign DisplayName="Set Log Subject"><Assign.To><OutArgument x:TypeArguments="x:String">[logSubject]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:String">[If(String.IsNullOrWhiteSpace(CurrentEmail.Subject), &quot;[Subject unavailable]&quot;, CurrentEmail.Subject)]</InArgument></Assign.Value></Assign>
+            <Assign DisplayName="Set Log Message Id"><Assign.To><OutArgument x:TypeArguments="x:String">[logGmailMessageId]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:String">[If(String.IsNullOrWhiteSpace(CurrentEmail.MessageId), &quot;[Message ID unavailable]&quot;, CurrentEmail.MessageId)]</InArgument></Assign.Value></Assign>
+            <Assign DisplayName="Set Log Timestamp"><Assign.To><OutArgument x:TypeArguments="x:String">[logProcessedDate]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:String">[DateTime.Now.ToString(&quot;o&quot;)]</InArgument></Assign.Value></Assign>
+            <TryCatch DisplayName="Process Current Email" sap:VirtualizedContainerService.HintSize="562,5227" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+              <TryCatch.Try>
+                <Sequence DisplayName="Download and Process Email" sap:VirtualizedContainerService.HintSize="560,4603" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Build Safe Email Staging Key" sap:VirtualizedContainerService.HintSize="526,175" sap2010:WorkflowViewState.IdRef="Assign_24">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[stagingKey]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[If(String.IsNullOrWhiteSpace(CurrentEmail.MessageId), "Email_" &amp; CurrentEmailIndex.ToString, CurrentEmail.MessageId).Replace("\", "_").Replace("/", "_").Replace(":", "_").Replace("*", "_").Replace("?", "_").Replace(Microsoft.VisualBasic.ChrW(34), "_").Replace(Microsoft.VisualBasic.ChrW(60), "_").Replace(Microsoft.VisualBasic.ChrW(62), "_").Replace("|", "_").Replace(" ", "_")]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Set Email Staging Folder" sap:VirtualizedContainerService.HintSize="526,175" sap2010:WorkflowViewState.IdRef="Assign_25">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[stagingFolder]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(inputAttachments, stagingKey)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Email Staging Folder" sap:VirtualizedContainerService.HintSize="526,123" sap2010:WorkflowViewState.IdRef="CreateDirectory_10" Path="[stagingFolder]" />
+                  <uga:DownloadAttachmentsConnections ConnectionAccountName="{x:Null}" Filter="{x:Null}" NewResult="{x:Null}" AuthScopesInvalid="False" ConflictResolution="Rename" ConnectionId="31901571-4873-402e-adde-b12003b60eb1" DestinationPath="[stagingFolder]" DisplayName="Download Email Attachments" Email="[CurrentEmail]" ExcludeInlineAttachments="True" FilterByFileNames="*.xlsx|*.xls" sap:VirtualizedContainerService.HintSize="526,237" sap2010:WorkflowViewState.IdRef="DownloadAttachmentsConnections_2" SearchMode="UseSimple" UseConnectionService="True" />
+                  <ui:ForEachFileX DisplayName="Process Email Excel Files" Filter="*.xls*" Folder="[stagingFolder]" sap:VirtualizedContainerService.HintSize="526,3522" sap2010:WorkflowViewState.IdRef="ForEachFileX_2" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+                    <ui:ForEachFileX.Body>
+                      <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
+                        <ActivityAction.Argument1>
+                          <DelegateInArgument x:TypeArguments="si:FileInfo" Name="CurrentFile" />
+                        </ActivityAction.Argument1>
+                        <ActivityAction.Argument2>
+                          <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentFileIndex" />
+                        </ActivityAction.Argument2>
+                        <Sequence DisplayName="Process Current Excel File" sap:VirtualizedContainerService.HintSize="524,3340" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign DisplayName="Increment Downloaded Count" sap:VirtualizedContainerService.HintSize="490,175" sap2010:WorkflowViewState.IdRef="Assign_27">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">[downloadedCount]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">[downloadedCount + 1]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign DisplayName="Increment Total Downloaded Count" sap2010:WorkflowViewState.IdRef="Assign_36">
+                            <Assign.To><OutArgument x:TypeArguments="x:Int32">[totalDownloadedCount]</OutArgument></Assign.To>
+                            <Assign.Value><InArgument x:TypeArguments="x:Int32">[totalDownloadedCount + 1]</InArgument></Assign.Value>
+                          </Assign>
+                          <ui:FileExistsX DisplayName="Check Processed Duplicate" Exists="[processedExists]" sap:VirtualizedContainerService.HintSize="490,175" sap2010:WorkflowViewState.IdRef="FileExistsX_6" Path="[System.IO.Path.Combine(processedFolder, CurrentFile.Name)]" />
+                          <If Condition="[processedExists]" DisplayName="Skip Already Processed File" sap:VirtualizedContainerService.HintSize="490,2930" sap2010:WorkflowViewState.IdRef="If_9">
+                            <If.Then>
+                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="488,411" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[errorFolder]" DisplayName="Route Duplicate File" sap:VirtualizedContainerService.HintSize="454,193" sap2010:WorkflowViewState.IdRef="MoveFile_4" Path="[CurrentFile.FullName]" />
+                                <Assign DisplayName="Increment Total Duplicate Count" sap2010:WorkflowViewState.IdRef="Assign_37">
+                                  <Assign.To><OutArgument x:TypeArguments="x:Int32">[totalDuplicateCount]</OutArgument></Assign.To>
+                                  <Assign.Value><InArgument x:TypeArguments="x:Int32">[totalDuplicateCount + 1]</InArgument></Assign.Value>
+                                </Assign>
+                                <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;A&quot; &amp; logRow.ToString]" Text="[If(String.IsNullOrWhiteSpace(CurrentEmail.FromAddress), &quot;[Sender unavailable]&quot;, CurrentEmail.FromAddress)]" DisplayName="Excel Log Duplicate Sender" />
+                                <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;B&quot; &amp; logRow.ToString]" Text="[If(String.IsNullOrWhiteSpace(CurrentEmail.Subject), &quot;[Subject unavailable]&quot;, CurrentEmail.Subject)]" DisplayName="Excel Log Duplicate Subject" />
+                                <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;C&quot; &amp; logRow.ToString]" Text="[CurrentFile.Name]" DisplayName="Excel Log Duplicate Attachment" />
+                                <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;D&quot; &amp; logRow.ToString]" Text="Duplicate-Skipped" DisplayName="Excel Log Duplicate Status" />
+                                <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;E&quot; &amp; logRow.ToString]" Text="Already present in Processed folder." DisplayName="Excel Log Duplicate Error" />
+                                <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;F&quot; &amp; logRow.ToString]" Text="[DateTime.Now.ToString(&quot;o&quot;)]" DisplayName="Excel Log Duplicate Date" />
+                                <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;G&quot; &amp; logRow.ToString]" Text="[If(String.IsNullOrWhiteSpace(CurrentEmail.MessageId), &quot;[Message ID unavailable]&quot;, CurrentEmail.MessageId)]" DisplayName="Excel Log Duplicate Message Id" />
+                                <Assign DisplayName="Increment Excel Log Row"><Assign.To><OutArgument x:TypeArguments="x:Int32">[logRow]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:Int32">[logRow + 1]</InArgument></Assign.Value></Assign>
+                                <ui:AppendLine File="{x:Null}" DisplayName="Log Duplicate Skip" Encoding="utf-8" FileName="[logPath]" sap:VirtualizedContainerService.HintSize="454,158" sap2010:WorkflowViewState.IdRef="AppendLine_10" Text="[Microsoft.VisualBasic.ChrW(34) &amp; CurrentEmail.Subject.Replace(Microsoft.VisualBasic.ChrW(34), Microsoft.VisualBasic.ChrW(34) &amp; Microsoft.VisualBasic.ChrW(34)) &amp; Microsoft.VisualBasic.ChrW(34) &amp; &quot;,&quot; &amp; Microsoft.VisualBasic.ChrW(34) &amp; CurrentFile.Name.Replace(Microsoft.VisualBasic.ChrW(34), Microsoft.VisualBasic.ChrW(34) &amp; Microsoft.VisualBasic.ChrW(34)) &amp; Microsoft.VisualBasic.ChrW(34) &amp; &quot;,Duplicate-Skipped,&quot; &amp; Microsoft.VisualBasic.ChrW(34) &amp; &quot;Already present in Processed folder.&quot; &amp; Microsoft.VisualBasic.ChrW(34)]" UseDefaultEncoding="False" />
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <TryCatch DisplayName="Read and Consolidate Workbook" sap:VirtualizedContainerService.HintSize="488,2335" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                                <TryCatch.Try>
+                                  <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="486,1550" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="Reset Current Data" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_28">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="sd:DataTable">[currentData]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="sd:DataTable">[Nothing]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <ui:ReadRange AddHeaders="False" DataTable="[currentData]" DisplayName="Read Excel Data" sap:VirtualizedContainerService.HintSize="452,227" sap2010:WorkflowViewState.IdRef="ReadRange_2" Range="A1" SheetName="Sheet1" WorkbookPath="[CurrentFile.FullName]" />
+                                    <If Condition="[currentData IsNot Nothing AndAlso currentData.Rows.Count &gt; 0]" DisplayName="Validate Workbook Rows" sap:VirtualizedContainerService.HintSize="452,1088" sap2010:WorkflowViewState.IdRef="If_10">
+                                      <If.Then>
+                                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,813" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:AppendRange DataTable="[currentData]" DisplayName="Append Data to Report" sap:VirtualizedContainerService.HintSize="416,227" sap2010:WorkflowViewState.IdRef="AppendRange_2" SheetName="ProcessedData" WorkbookPath="[reportPath]" />
+                                          <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[processedFolder]" DisplayName="Move Successful File" sap:VirtualizedContainerService.HintSize="416,193" sap2010:WorkflowViewState.IdRef="MoveFile_5" Path="[CurrentFile.FullName]" />
+                                          <Assign DisplayName="Increment Successful Count" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_29">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[successfulCount]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[successfulCount + 1]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <Assign DisplayName="Increment Total Successful Count" sap2010:WorkflowViewState.IdRef="Assign_38">
+                                            <Assign.To><OutArgument x:TypeArguments="x:Int32">[totalSuccessfulCount]</OutArgument></Assign.To>
+                                            <Assign.Value><InArgument x:TypeArguments="x:Int32">[totalSuccessfulCount + 1]</InArgument></Assign.Value>
+                                          </Assign>
+                                          <Assign DisplayName="Add Consolidated Data Rows" sap2010:WorkflowViewState.IdRef="Assign_39">
+                                            <Assign.To><OutArgument x:TypeArguments="x:Int32">[totalDataRows]</OutArgument></Assign.To>
+                                            <Assign.Value><InArgument x:TypeArguments="x:Int32">[totalDataRows + currentData.Rows.Count]</InArgument></Assign.Value>
+                                          </Assign>
+                                          <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;A&quot; &amp; logRow.ToString]" Text="[logSender]" DisplayName="Excel Log Success Sender" />
+                                          <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;B&quot; &amp; logRow.ToString]" Text="[logSubject]" DisplayName="Excel Log Success Subject" />
+                                          <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;C&quot; &amp; logRow.ToString]" Text="[CurrentFile.Name]" DisplayName="Excel Log Success Attachment" />
+                                          <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;D&quot; &amp; logRow.ToString]" Text="Success" DisplayName="Excel Log Success Status" />
+                                          <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;E&quot; &amp; logRow.ToString]" Text="" DisplayName="Excel Log Success Error" />
+                                          <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;F&quot; &amp; logRow.ToString]" Text="[logProcessedDate]" DisplayName="Excel Log Success Date" />
+                                          <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;G&quot; &amp; logRow.ToString]" Text="[logGmailMessageId]" DisplayName="Excel Log Success Message Id" />
+                                          <Assign DisplayName="Increment Excel Log Row After Success"><Assign.To><OutArgument x:TypeArguments="x:Int32">[logRow]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:Int32">[logRow + 1]</InArgument></Assign.Value></Assign>
+                                          <ui:AppendLine File="{x:Null}" DisplayName="Log Success" Encoding="utf-8" FileName="[logPath]" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="AppendLine_11" Text="[Microsoft.VisualBasic.ChrW(34) &amp; CurrentEmail.Subject.Replace(Microsoft.VisualBasic.ChrW(34), Microsoft.VisualBasic.ChrW(34) &amp; Microsoft.VisualBasic.ChrW(34)) &amp; Microsoft.VisualBasic.ChrW(34) &amp; &quot;,&quot; &amp; Microsoft.VisualBasic.ChrW(34) &amp; CurrentFile.Name.Replace(Microsoft.VisualBasic.ChrW(34), Microsoft.VisualBasic.ChrW(34) &amp; Microsoft.VisualBasic.ChrW(34)) &amp; Microsoft.VisualBasic.ChrW(34) &amp; &quot;,Success,&quot; &amp; Microsoft.VisualBasic.ChrW(34)]" UseDefaultEncoding="False" />
+                                        </Sequence>
+                                      </If.Then>
+                                      <If.Else>
+                                        <Throw DisplayName="Empty Workbook" Exception="[New System.Exception(&quot;Workbook is empty or contains no readable rows.&quot;)]" sap:VirtualizedContainerService.HintSize="450,91" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                                      </If.Else>
+                                    </If>
+                                  </Sequence>
+                                </TryCatch.Try>
+                                <TryCatch.Catches>
+                                  <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                                    <ActivityAction x:TypeArguments="s:Exception">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="Catch" sap:VirtualizedContainerService.HintSize="486,586" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Assign DisplayName="Capture Workbook Error" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_30">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">[failureText]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">[exception.Message]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                        <Assign DisplayName="Increment Total Failed Count For Workbook" sap2010:WorkflowViewState.IdRef="Assign_41">
+                                          <Assign.To><OutArgument x:TypeArguments="x:Int32">[totalFailedCount]</OutArgument></Assign.To>
+                                          <Assign.Value><InArgument x:TypeArguments="x:Int32">[totalFailedCount + 1]</InArgument></Assign.Value>
+                                        </Assign>
+                                        <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;A&quot; &amp; logRow.ToString]" Text="[logSender]" DisplayName="Excel Log Failure Sender" />
+                                        <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;B&quot; &amp; logRow.ToString]" Text="[logSubject]" DisplayName="Excel Log Failure Subject" />
+                                        <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;C&quot; &amp; logRow.ToString]" Text="[CurrentFile.Name]" DisplayName="Excel Log Failure Attachment" />
+                                        <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;D&quot; &amp; logRow.ToString]" Text="Failed" DisplayName="Excel Log Failure Status" />
+                                        <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;E&quot; &amp; logRow.ToString]" Text="[failureText]" DisplayName="Excel Log Failure Error" />
+                                        <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;F&quot; &amp; logRow.ToString]" Text="[logProcessedDate]" DisplayName="Excel Log Failure Date" />
+                                        <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;G&quot; &amp; logRow.ToString]" Text="[logGmailMessageId]" DisplayName="Excel Log Failure Message Id" />
+                                        <Assign DisplayName="Increment Excel Log Row After Failure"><Assign.To><OutArgument x:TypeArguments="x:Int32">[logRow]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:Int32">[logRow + 1]</InArgument></Assign.Value></Assign>
+                                        <ui:AppendLine File="{x:Null}" DisplayName="Log Workbook Failure" Encoding="utf-8" FileName="[logPath]" sap:VirtualizedContainerService.HintSize="452,167" sap2010:WorkflowViewState.IdRef="AppendLine_12" Text="[Microsoft.VisualBasic.ChrW(34) &amp; CurrentEmail.Subject.Replace(Microsoft.VisualBasic.ChrW(34), Microsoft.VisualBasic.ChrW(34) &amp; Microsoft.VisualBasic.ChrW(34)) &amp; Microsoft.VisualBasic.ChrW(34) &amp; &quot;,&quot; &amp; Microsoft.VisualBasic.ChrW(34) &amp; CurrentFile.Name.Replace(Microsoft.VisualBasic.ChrW(34), Microsoft.VisualBasic.ChrW(34) &amp; Microsoft.VisualBasic.ChrW(34)) &amp; Microsoft.VisualBasic.ChrW(34) &amp; &quot;,Failed,&quot; &amp; Microsoft.VisualBasic.ChrW(34) &amp; failureText.Replace(Microsoft.VisualBasic.ChrW(34), Microsoft.VisualBasic.ChrW(34) &amp; Microsoft.VisualBasic.ChrW(34)) &amp; Microsoft.VisualBasic.ChrW(34)]" UseDefaultEncoding="False" />
+                                        <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[errorFolder]" DisplayName="Move Failed File" sap:VirtualizedContainerService.HintSize="452,184" sap2010:WorkflowViewState.IdRef="MoveFile_6" Path="[CurrentFile.FullName]" />
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </Catch>
+                                </TryCatch.Catches>
+                              </TryCatch>
+                            </If.Else>
+                          </If>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEachFileX.Body>
+                  </ui:ForEachFileX>
+                  <If Condition="[downloadedCount = 0]" DisplayName="Log No Matching Excel Attachment" sap:VirtualizedContainerService.HintSize="526,311" sap2010:WorkflowViewState.IdRef="If_8">
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                        <Assign DisplayName="Increment Total Failed Count For No Match" sap2010:WorkflowViewState.IdRef="Assign_40">
+                          <Assign.To><OutArgument x:TypeArguments="x:Int32">[totalFailedCount]</OutArgument></Assign.To>
+                          <Assign.Value><InArgument x:TypeArguments="x:Int32">[totalFailedCount + 1]</InArgument></Assign.Value>
+                        </Assign>
+                        <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;A&quot; &amp; logRow.ToString]" Text="[logSender]" DisplayName="Excel Log No Match Sender" />
+                        <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;B&quot; &amp; logRow.ToString]" Text="[logSubject]" DisplayName="Excel Log No Match Subject" />
+                        <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;C&quot; &amp; logRow.ToString]" Text="No matching Excel attachment" DisplayName="Excel Log No Match Attachment" />
+                        <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;D&quot; &amp; logRow.ToString]" Text="Failed" DisplayName="Excel Log No Match Status" />
+                        <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;E&quot; &amp; logRow.ToString]" Text="No .xlsx or .xls file was present after download." DisplayName="Excel Log No Match Error" />
+                        <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;F&quot; &amp; logRow.ToString]" Text="[logProcessedDate]" DisplayName="Excel Log No Match Date" />
+                        <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;G&quot; &amp; logRow.ToString]" Text="[logGmailMessageId]" DisplayName="Excel Log No Match Message Id" />
+                        <Assign DisplayName="Increment Excel Log Row After No Match"><Assign.To><OutArgument x:TypeArguments="x:Int32">[logRow]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:Int32">[logRow + 1]</InArgument></Assign.Value></Assign>
+                        <ui:AppendLine File="{x:Null}" DisplayName="Log No Matching Attachment" Encoding="utf-8" FileName="[logPath]" sap:VirtualizedContainerService.HintSize="334,135" sap2010:WorkflowViewState.IdRef="AppendLine_8" Text="[Microsoft.VisualBasic.ChrW(34) &amp; CurrentEmail.Subject.Replace(Microsoft.VisualBasic.ChrW(34), Microsoft.VisualBasic.ChrW(34) &amp; Microsoft.VisualBasic.ChrW(34)) &amp; Microsoft.VisualBasic.ChrW(34) &amp; &quot;,[No matching Excel attachment],Failed,&quot; &amp; Microsoft.VisualBasic.ChrW(34) &amp; &quot;No .xlsx or .xls file was present after download.&quot; &amp; Microsoft.VisualBasic.ChrW(34)]" UseDefaultEncoding="False" />
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                </Sequence>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Catch" sap:VirtualizedContainerService.HintSize="560,393" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign DisplayName="Capture Email Failure" sap:VirtualizedContainerService.HintSize="526,175" sap2010:WorkflowViewState.IdRef="Assign_26">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[failureText]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[exception.Message]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Increment Total Failed Count For Email" sap2010:WorkflowViewState.IdRef="Assign_42">
+                        <Assign.To><OutArgument x:TypeArguments="x:Int32">[totalFailedCount]</OutArgument></Assign.To>
+                        <Assign.Value><InArgument x:TypeArguments="x:Int32">[totalFailedCount + 1]</InArgument></Assign.Value>
+                      </Assign>
+                      <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;A&quot; &amp; logRow.ToString]" Text="[logSender]" DisplayName="Excel Log Email Failure Sender" />
+                      <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;B&quot; &amp; logRow.ToString]" Text="[logSubject]" DisplayName="Excel Log Email Failure Subject" />
+                      <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;C&quot; &amp; logRow.ToString]" Text="Download failure" DisplayName="Excel Log Email Failure Attachment" />
+                      <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;D&quot; &amp; logRow.ToString]" Text="Failed" DisplayName="Excel Log Email Failure Status" />
+                      <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;E&quot; &amp; logRow.ToString]" Text="[failureText]" DisplayName="Excel Log Email Failure Error" />
+                      <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;F&quot; &amp; logRow.ToString]" Text="[logProcessedDate]" DisplayName="Excel Log Email Failure Date" />
+                      <ui:WriteCell WorkbookPath="[logExcelPath]" SheetName="ProcessingLog" Cell="[&quot;G&quot; &amp; logRow.ToString]" Text="[logGmailMessageId]" DisplayName="Excel Log Email Failure Message Id" />
+                      <Assign DisplayName="Increment Excel Log Row After Email Failure"><Assign.To><OutArgument x:TypeArguments="x:Int32">[logRow]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:Int32">[logRow + 1]</InArgument></Assign.Value></Assign>
+                      <ui:AppendLine File="{x:Null}" DisplayName="Log Email Failure" Encoding="utf-8" FileName="[logPath]" sap:VirtualizedContainerService.HintSize="526,158" sap2010:WorkflowViewState.IdRef="AppendLine_9" Text="[Microsoft.VisualBasic.ChrW(34) &amp; CurrentEmail.Subject.Replace(Microsoft.VisualBasic.ChrW(34), Microsoft.VisualBasic.ChrW(34) &amp; Microsoft.VisualBasic.ChrW(34)) &amp; Microsoft.VisualBasic.ChrW(34) &amp; &quot;,[Download failure],Failed,&quot; &amp; Microsoft.VisualBasic.ChrW(34) &amp; failureText.Replace(Microsoft.VisualBasic.ChrW(34), Microsoft.VisualBasic.ChrW(34) &amp; Microsoft.VisualBasic.ChrW(34)) &amp; Microsoft.VisualBasic.ChrW(34)]" UseDefaultEncoding="False" />
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+            <uga:MarkAsReadUnreadConnections ConnectionAccountName="{x:Null}" AuthScopesInvalid="False" ConnectionId="31901571-4873-402e-adde-b12003b60eb1" DisplayName="Mark Current Email Read" Email="[CurrentEmail]" sap:VirtualizedContainerService.HintSize="562,228" sap2010:WorkflowViewState.IdRef="MarkAsReadUnreadConnections_2" MarkAs="Read" UseConnectionService="True" />
+          </Sequence>
+        </ActivityAction>
+      </uga:ForEachEmailConnections.Body>
+      <uga:ForEachEmailConnections.FilterSelectionBackup>
+        <usau:BackupSlot x:TypeArguments="ugae:FilterMode" StoredValue="ConditionBuilder">
+          <usau:BackupSlot.BackupValues>
+            <scg:Dictionary x:TypeArguments="ugae:FilterMode, scg:List(x:Object)" />
+          </usau:BackupSlot.BackupValues>
+        </usau:BackupSlot>
+      </uga:ForEachEmailConnections.FilterSelectionBackup>
+      <uga:ForEachEmailConnections.Folder>
+        <ugagm:FolderArgument ConnectionDescriptor="{x:Null}" ManualEntryFolderName="{x:Null}" BrowserFolderId="INBOX" BrowserFolderName="Inbox" ConnectionKey="31901571-4873-402e-adde-b12003b60eb1" InputMode="Browse">
+          <ugagm:FolderArgument.Backup>
+            <usau:BackupSlot x:TypeArguments="ugage:FolderInputMode" x:Name="__ReferenceID0" StoredValue="Browse">
+              <usau:BackupSlot.BackupValues>
+                <scg:Dictionary x:TypeArguments="ugage:FolderInputMode, scg:List(x:Object)" />
+              </usau:BackupSlot.BackupValues>
+            </usau:BackupSlot>
+          </ugagm:FolderArgument.Backup>
+        </ugagm:FolderArgument>
+      </uga:ForEachEmailConnections.Folder>
+    </uga:ForEachEmailConnections>
+    <ui:WriteCell WorkbookPath="[reportPath]" SheetName="Summary" Cell="A1" Text="Metric" DisplayName="Summary Header Metric" sap2010:WorkflowViewState.IdRef="WriteCell_1" />
+    <ui:WriteCell WorkbookPath="[reportPath]" SheetName="Summary" Cell="B1" Text="Value" DisplayName="Summary Header Value" sap2010:WorkflowViewState.IdRef="WriteCell_2" />
+    <ui:WriteCell WorkbookPath="[reportPath]" SheetName="Summary" Cell="A2" Text="Run timestamp" DisplayName="Summary Label Timestamp" sap2010:WorkflowViewState.IdRef="WriteCell_3" />
+    <ui:WriteCell WorkbookPath="[reportPath]" SheetName="Summary" Cell="B2" Text="[DateTime.Now.ToString(&quot;o&quot;)]" DisplayName="Summary Value Timestamp" sap2010:WorkflowViewState.IdRef="WriteCell_4" />
+    <ui:WriteCell WorkbookPath="[reportPath]" SheetName="Summary" Cell="A3" Text="Retrieved emails" DisplayName="Summary Label Emails" sap2010:WorkflowViewState.IdRef="WriteCell_5" />
+    <ui:WriteCell WorkbookPath="[reportPath]" SheetName="Summary" Cell="B3" Text="[emailCount.ToString]" DisplayName="Summary Value Emails" sap2010:WorkflowViewState.IdRef="WriteCell_6" />
+    <ui:WriteCell WorkbookPath="[reportPath]" SheetName="Summary" Cell="A4" Text="Excel attachments downloaded" DisplayName="Summary Label Downloaded" sap2010:WorkflowViewState.IdRef="WriteCell_7" />
+    <ui:WriteCell WorkbookPath="[reportPath]" SheetName="Summary" Cell="B4" Text="[totalDownloadedCount.ToString]" DisplayName="Summary Value Downloaded" sap2010:WorkflowViewState.IdRef="WriteCell_8" />
+    <ui:WriteCell WorkbookPath="[reportPath]" SheetName="Summary" Cell="A5" Text="Successful files" DisplayName="Summary Label Successful" sap2010:WorkflowViewState.IdRef="WriteCell_9" />
+    <ui:WriteCell WorkbookPath="[reportPath]" SheetName="Summary" Cell="B5" Text="[totalSuccessfulCount.ToString]" DisplayName="Summary Value Successful" sap2010:WorkflowViewState.IdRef="WriteCell_10" />
+    <ui:WriteCell WorkbookPath="[reportPath]" SheetName="Summary" Cell="A6" Text="Failed files" DisplayName="Summary Label Failed" sap2010:WorkflowViewState.IdRef="WriteCell_11" />
+    <ui:WriteCell WorkbookPath="[reportPath]" SheetName="Summary" Cell="B6" Text="[totalFailedCount.ToString]" DisplayName="Summary Value Failed" sap2010:WorkflowViewState.IdRef="WriteCell_12" />
+    <ui:WriteCell WorkbookPath="[reportPath]" SheetName="Summary" Cell="A7" Text="Duplicates skipped" DisplayName="Summary Label Duplicates" sap2010:WorkflowViewState.IdRef="WriteCell_13" />
+    <ui:WriteCell WorkbookPath="[reportPath]" SheetName="Summary" Cell="B7" Text="[totalDuplicateCount.ToString]" DisplayName="Summary Value Duplicates" sap2010:WorkflowViewState.IdRef="WriteCell_14" />
+    <ui:WriteCell WorkbookPath="[reportPath]" SheetName="Summary" Cell="A8" Text="Consolidated data rows" DisplayName="Summary Label Data Rows" sap2010:WorkflowViewState.IdRef="WriteCell_15" />
+    <ui:WriteCell WorkbookPath="[reportPath]" SheetName="Summary" Cell="B8" Text="[totalDataRows.ToString]" DisplayName="Summary Value Data Rows" sap2010:WorkflowViewState.IdRef="WriteCell_16" />
+    <ui:WriteCell WorkbookPath="[reportPath]" SheetName="Summary" Cell="A9" Text="Success rate" DisplayName="Summary Label Success Rate" sap2010:WorkflowViewState.IdRef="WriteCell_17" />
+    <ui:WriteCell WorkbookPath="[reportPath]" SheetName="Summary" Cell="B9" Text="[If(totalDownloadedCount = 0, &quot;0%&quot;, ((totalSuccessfulCount * 100.0) / totalDownloadedCount).ToString(&quot;0.00&quot;) &amp; &quot;%&quot;)]" DisplayName="Summary Value Success Rate" sap2010:WorkflowViewState.IdRef="WriteCell_18" />
+    <ui:LogMessage Level="Info" Message="[&quot;Gmail emails retrieved: &quot; &amp; emailCount.ToString &amp; &quot;; successful files: &quot; &amp; totalSuccessfulCount.ToString &amp; &quot;; failed files: &quot; &amp; totalFailedCount.ToString &amp; &quot;; duplicates skipped: &quot; &amp; totalDuplicateCount.ToString &amp; &quot;; data rows: &quot; &amp; totalDataRows.ToString]" DisplayName="Log Summary Statistics" sap2010:WorkflowViewState.IdRef="LogMessage_Summary" />
+    <ui:LogMessage Level="Info" Message="[&quot;Gmail emails retrieved: &quot; &amp; emailCount.ToString]" DisplayName="Log Gmail Email Count" sap:VirtualizedContainerService.HintSize="598,123" sap2010:WorkflowViewState.IdRef="LogMessage_EmailCount" />
+  </Sequence>
+</Activity>

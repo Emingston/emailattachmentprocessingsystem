@@ -1,0 +1,139 @@
+<Activity x:Class="Main" mc:Ignorable="sap sap2010" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="clr-namespace:UiPath.Core.Activities;assembly=UiPath.System.Activities" xmlns:gs="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities" xmlns:gm="clr-namespace:UiPath.GSuite.Models;assembly=UiPath.GSuite" xmlns:excel="clr-namespace:UiPath.Excel.Activities;assembly=UiPath.Excel.Activities" xmlns:sys="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sysio="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:dt="clr-namespace:System.Data;assembly=System.Data.Common">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.GSuite.Activities</x:String>
+      <x:String>UiPath.GSuite.Models</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Email Attachment Processing" sap2010:WorkflowViewState.IdRef="Sequence_Main">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="inputAttachments" />
+      <Variable x:TypeArguments="x:String" Name="processedFolder" />
+      <Variable x:TypeArguments="x:String" Name="errorFolder" />
+      <Variable x:TypeArguments="x:String" Name="outputFolder" />
+      <Variable x:TypeArguments="x:String" Name="reportPath" />
+      <Variable x:TypeArguments="x:String" Name="logPath" />
+      <Variable x:TypeArguments="dt:DataTable" Name="currentData" />
+      <Variable x:TypeArguments="x:Boolean" Name="fileIsValid" />
+      <Variable x:TypeArguments="x:Boolean" Name="reportExists" />
+      <Variable x:TypeArguments="x:Boolean" Name="logExists" />
+      <Variable x:TypeArguments="x:String" Name="failureText" />
+    </Sequence.Variables>
+    <Assign DisplayName="Set Input Attachments Folder">
+      <Assign.To><OutArgument x:TypeArguments="x:String">[inputAttachments]</OutArgument></Assign.To>
+      <Assign.Value><InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(Environment.CurrentDirectory, "Input", "Attachments")]</InArgument></Assign.Value>
+    </Assign>
+    <Assign DisplayName="Set Processed Folder">
+      <Assign.To><OutArgument x:TypeArguments="x:String">[processedFolder]</OutArgument></Assign.To>
+      <Assign.Value><InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(Environment.CurrentDirectory, "Processed")]</InArgument></Assign.Value>
+    </Assign>
+    <Assign DisplayName="Set Error Folder">
+      <Assign.To><OutArgument x:TypeArguments="x:String">[errorFolder]</OutArgument></Assign.To>
+      <Assign.Value><InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(Environment.CurrentDirectory, "Error")]</InArgument></Assign.Value>
+    </Assign>
+    <Assign DisplayName="Set Output Folder">
+      <Assign.To><OutArgument x:TypeArguments="x:String">[outputFolder]</OutArgument></Assign.To>
+      <Assign.Value><InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(Environment.CurrentDirectory, "Output")]</InArgument></Assign.Value>
+    </Assign>
+    <Assign DisplayName="Set Report Path">
+      <Assign.To><OutArgument x:TypeArguments="x:String">[reportPath]</OutArgument></Assign.To>
+      <Assign.Value><InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(outputFolder, "Processed_Report.xlsx")]</InArgument></Assign.Value>
+    </Assign>
+    <Assign DisplayName="Set Log Path">
+      <Assign.To><OutArgument x:TypeArguments="x:String">[logPath]</OutArgument></Assign.To>
+      <Assign.Value><InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(outputFolder, "Processing_Log.csv")]</InArgument></Assign.Value>
+    </Assign>
+    <ui:CreateDirectory DisplayName="Create Input Attachments Folder" Path="[inputAttachments]" />
+    <ui:CreateDirectory DisplayName="Create Processed Folder" Path="[processedFolder]" />
+    <ui:CreateDirectory DisplayName="Create Error Folder" Path="[errorFolder]" />
+    <ui:CreateDirectory DisplayName="Create Output Folder" Path="[outputFolder]" />
+    <ui:FileExistsX DisplayName="Check Processing Log" Path="[logPath]" Exists="[logExists]" />
+    <If DisplayName="Create Log Header When Needed" Condition="[Not logExists]">
+      <If.Then>
+        <ui:AppendLine DisplayName="Write Log Header" FileName="[logPath]" Text="&quot;Subject&quot;,&quot;Filename&quot;,&quot;Status&quot;,&quot;Error&quot;" Encoding="utf-8" />
+      </If.Then>
+    </If>
+    <gs:ForEachEmailConnections DisplayName="Retrieve Unread Gmail Attachments" CurrentItemVariableName="CurrentEmail" MaxResults="100" IncludeSubfolders="False" UnreadOnly="True" WithAttachmentsOnly="True" MarkAsRead="True" IncludeAttachmentsMode="All" FilterSelectionMode="Query" QueryFilter="[&quot;is:unread in:inbox has:attachment&quot;]" ConnectionId="{x:Null}">
+      <gs:ForEachEmailConnections.Body>
+        <ActivityAction x:TypeArguments="gm:GmailMessage, x:Int32">
+          <ActivityAction.Argument1><DelegateInArgument x:TypeArguments="gm:GmailMessage" Name="CurrentEmail" /></ActivityAction.Argument1>
+          <ActivityAction.Argument2><DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentEmailIndex" /></ActivityAction.Argument2>
+          <Sequence DisplayName="Process Current Email">
+            <gs:DownloadAttachmentsConnections DisplayName="Download Excel Attachments" Email="[CurrentEmail]" ExcludeInlineAttachments="True" FilterByFileNames="[&quot;*.xlsx|*.xls&quot;]" DestinationPath="[inputAttachments]" ConflictResolution="Rename" SearchMode="UseSimple" ConnectionId="{x:Null}" />
+            <ui:ForEachFileX DisplayName="Process Downloaded Excel Files" Folder="[inputAttachments]" Filter="*.xls*" IncludeSubDirectories="False" OrderBy="NameAscFirst">
+              <ui:ForEachFileX.Body>
+                <ActivityAction x:TypeArguments="sys:IO.FileInfo, x:Int32">
+                  <ActivityAction.Argument1><DelegateInArgument x:TypeArguments="sysio:FileInfo" Name="CurrentFile" /></ActivityAction.Argument1>
+                  <ActivityAction.Argument2><DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentFileIndex" /></ActivityAction.Argument2>
+                  <TryCatch DisplayName="Validate and Consolidate File">
+                    <TryCatch.Try>
+                      <Sequence DisplayName="Process Workbook">
+                        <Assign DisplayName="Reset Data Table">
+                          <Assign.To><OutArgument x:TypeArguments="dt:DataTable">[currentData]</OutArgument></Assign.To>
+                          <Assign.Value><InArgument x:TypeArguments="dt:DataTable">[Nothing]</InArgument></Assign.Value>
+                        </Assign>
+                        <excel:ReadRange DisplayName="Read Excel Data" WorkbookPath="[CurrentFile.FullName]" SheetName="Sheet1" Range="A1" AddHeaders="True" DataTable="[currentData]" />
+                        <If DisplayName="Validate Data Table" Condition="[currentData IsNot Nothing AndAlso currentData.Rows.Count &gt; 0]">
+                          <If.Then>
+                            <Sequence DisplayName="Valid File">
+                              <excel:AppendRange DisplayName="Append Data to Report" WorkbookPath="[reportPath]" SheetName="ProcessedData" DataTable="[currentData]" />
+                              <ui:AppendLine DisplayName="Log Success" FileName="[logPath]" Text="[&quot;&quot;&quot;&quot; &amp; CurrentEmail.Subject.Replace(&quot;&quot;&quot;&quot;, &quot;&quot;&quot;&quot;&quot;&quot;) &amp; &quot;&quot;&quot;,&quot;&quot;&quot; &amp; CurrentFile.Name.Replace(&quot;&quot;&quot;&quot;, &quot;&quot;&quot;&quot;&quot;&quot;) &amp; &quot;&quot;&quot;,Success,&quot;&quot;&quot;&quot;]" Encoding="utf-8" />
+                              <ui:MoveFile DisplayName="Move Successful File" Path="[CurrentFile.FullName]" Destination="[processedFolder]" Overwrite="False" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Throw DisplayName="Invalid or Empty Workbook" Exception="[New System.Exception(&quot;Workbook is empty or contains no readable rows.&quot;)]" />
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="sys:Exception" ExceptionType="sys:Exception">
+                        <ActivityAction x:TypeArguments="sys:Exception">
+                          <ActivityAction.Argument><DelegateInArgument x:TypeArguments="sys:Exception" Name="exception" /></ActivityAction.Argument>
+                          <Sequence DisplayName="Handle File Failure">
+                            <Assign DisplayName="Capture Error">
+                              <Assign.To><OutArgument x:TypeArguments="x:String">[failureText]</OutArgument></Assign.To>
+                              <Assign.Value><InArgument x:TypeArguments="x:String">[exception.Message]</InArgument></Assign.Value>
+                            </Assign>
+                            <ui:AppendLine DisplayName="Log Failure" FileName="[logPath]" Text="[&quot;&quot;&quot;&quot; &amp; CurrentEmail.Subject.Replace(&quot;&quot;&quot;&quot;, &quot;&quot;&quot;&quot;&quot;&quot;) &amp; &quot;&quot;&quot;,&quot;&quot;&quot; &amp; CurrentFile.Name.Replace(&quot;&quot;&quot;&quot;, &quot;&quot;&quot;&quot;&quot;&quot;) &amp; &quot;&quot;&quot;,Failed,&quot;&quot;&quot; &amp; failureText.Replace(&quot;&quot;&quot;&quot;, &quot;&quot;&quot;&quot;&quot;&quot;) &amp; &quot;&quot;&quot;&quot;]" Encoding="utf-8" />
+                            <ui:MoveFile DisplayName="Move Failed File" Path="[CurrentFile.FullName]" Destination="[errorFolder]" Overwrite="False" ContinueOnError="True" />
+                          </Sequence>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                </ActivityAction>
+              </ui:ForEachFileX.Body>
+            </ui:ForEachFileX>
+          </Sequence>
+        </ActivityAction>
+      </gs:ForEachEmailConnections.Body>
+    </gs:ForEachEmailConnections>
+  </Sequence>
+</Activity>
